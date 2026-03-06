@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas JOSHUA Game</title>
+    <style>
+      /* simple styling for the game page */
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 105vh;
+        background-color: #143ec9;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      canvas {
+        background-color: #111;
+        border: 2px solid #555;
+      }
+
+      #instructions {
+        margin-bottom: 1rem;
+        text-align: center;
+        overflow: hidden; /* keep the animated text contained */
+      }
+
+      /* animate the paragraphs inside #instructions */
+      #instructions p {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scrollText 10s linear infinite;
+      }
+
+      #instructions h2 {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scrollText 10s linear infinite;
+      }
+
+      @keyframes scrollText {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="instructions">
+      <p>
+        Use the arrow keys to move the blue square. Avoid the red obstacles!
+      </p>
+      <p>Press Enter to start / reload the game.</p>
+    </div>
+
+    <!-- background music; drop a file named music.mp3 (or change src accordingly) -->
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+      <!-- fallback text if audio unsupported -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <canvas id="gameCanvas" width="400" height="490"></canvas>
+    <script src="game.js"></script>
+    <div id="instructions">
+      <h2>JAVASCRIPT IS  POWERFUL!</h2>
+    </div>
+  </body>
+</html>
